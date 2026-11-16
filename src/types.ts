@@ -1,0 +1,10 @@
+export type Column = { id: string; title: string; source: string; required: boolean }
+export type Brand = { id: string; name: string; aliases: string[]; active: boolean; groupId: string }
+export type Group = { id: string; name: string; fileName: string; categoryId: string; active: boolean; skipEmpty: boolean }
+export type Category = { id: string; name: string }
+export type ExportMode = 'strict' | 'flexible' | 'confirmed-skip'
+export type Config = { version: 1; columns: Column[]; categories: Category[]; groups: Group[]; brands: Brand[]; folderName: string; mainPattern: string; groupPattern: string; folderPattern: string; exportMode: ExportMode; groupRowHeight: number }
+export const ROW_FORMAT = Symbol('row-format')
+export type RowFormat = { height?: number; styles: Record<string, Partial<import('exceljs').Style>> }
+export type WorkbookFormat = { headerHeight?: number; defaultRowHeight?: number; widths: Record<string, number>; headerStyles: Record<string, Partial<import('exceljs').Style>> }
+export type Row = Record<string, import('exceljs').CellValue> & { [ROW_FORMAT]?: RowFormat }

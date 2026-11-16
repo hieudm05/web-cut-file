@@ -1,0 +1,24 @@
+# Dependencies and local package cache
+node_modules/
+.npm-cache/
+
+# Build and test output
+dist/
+coverage/
+verification-output/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Logs and editor/OS files
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
