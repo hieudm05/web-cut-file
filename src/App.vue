@@ -1,7 +1,7 @@
 ﻿<script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
 import { readExcel, defaultColumns, mapRows, normalize } from './excel'
-import { classify, names, validateConfig, weekOf } from './report'
+import { classify, names, previousWeekOf, validateConfig, weekOf } from './report'
 import { emptyConfig, loadConfig, saveConfig } from './storage'
 import { exportReports } from './export'
 import { applyDefaultGroups, sourceBrandNames } from './preset'
@@ -11,7 +11,8 @@ const config = ref<Config>(emptyConfig())
 const tab = ref('dashboard')
 const file = ref<File>()
 const source = ref<{ headers:string[]; rows:Row[]; sheet:string; headerRow:number; format:WorkbookFormat }>()
-const date = ref(new Date().toISOString().slice(0,10))
+const defaultDate = previousWeekOf().start
+const date = ref(`${defaultDate.getFullYear()}-${String(defaultDate.getMonth() + 1).padStart(2, '0')}-${String(defaultDate.getDate()).padStart(2, '0')}`)
 const custom = ref(false), from = ref(''), to = ref('')
 const busy = ref(false), status = ref(''), error = ref('')
 const progress = ref(0)
