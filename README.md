@@ -1,4 +1,6 @@
-# Local Excel Report Manager
+# Báo cáo hành trình
+
+Phát triển bởi **Minh Hiếu**.
 
 Ứng dụng Vue 3 xử lý Excel trong trình duyệt. Cấu hình được lưu trong IndexedDB; dữ liệu Excel không được lưu lâu dài hoặc gửi lên máy chủ.
 
