@@ -33,6 +33,3 @@ File mẫu có một dòng thiếu tên `Hãng`. Ở chế độ Flexible, dòng
 
 Khi trình duyệt không hỗ trợ File System Access API, xuất ZIP chứa thư mục báo cáo. Khi ghi vào thư mục, kiểm tra file tồn tại trước khi ghi; thao tác ghi nhiều file không có tính nguyên tử.
 
-
-
-
